@@ -1,0 +1,38 @@
+<!-- this file deals with actually making the Thymeleaf html pages-->
+<!-- page will show options to rate staff, add new rating link, table of all ratings, and each rating will have a details link-->
+ <!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Staff Ratings</title>
+    </head>
+    <body>
+
+        <h1>Rate CS Teaching Staff</h1>
+
+        <p>
+            <a th:href="@{/ratings/new}">Add New Rating</a>
+        </p>
+
+        <table border="1">
+            <thhead>
+                <tr>
+                    <th>Name</th>
+                    <th>Role Type</th>
+                    <th>Overall Score</th>
+                    <th>Details</th>
+                </tr>
+            </thhead>
+
+            <tbody>
+                <tr th:each="rating : ${ratings}">
+                <td th:text="${rating.name}">Name</td>
+                <td th:text="${rating.roleType}">Role</td>
+                <td th:text="${rating.overallScore}">0.0</td>
+                <td>
+                    <a th:href="@{/ratings/{id}(id=${rating.id})}">View</a>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

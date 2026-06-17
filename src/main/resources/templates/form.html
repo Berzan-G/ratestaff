@@ -1,0 +1,86 @@
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rating Form</title>
+</head>
+<body>
+
+<h1>Staff Rating Form</h1>
+
+<form th:action="${rating.id == null} ? @{/ratings} : @{/ratings/{id}(id=${rating.id})}"
+      th:object="${rating}"
+      method="post"
+      novalidate>
+
+    <p>
+        <label>Name:</label><br>
+        <input type="text" th:field="*{name}">
+        <br>
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    </p>
+
+    <p>
+        <label>Email:</label><br>
+        <input type="text" th:field="*{email}">
+        <br>
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    </p>
+
+    <p>
+        <label>Role Type:</label><br>
+        <select th:field="*{roleType}">
+            <option value="">-- Select Role --</option>
+            <option th:each="role : ${roleTypes}"
+                    th:value="${role}"
+                    th:text="${role}">
+            </option>
+        </select>
+        <br>
+        <span th:if="${#fields.hasErrors('roleType')}" th:errors="*{roleType}"></span>
+    </p>
+
+    <p>
+        <label>Clarity Score:</label><br>
+        <small>Enter a number from 1 to 10.</small><br>
+        <input type="number" th:field="*{clarity}" min="1" max="10">
+        <br>
+        <span th:if="${#fields.hasErrors('clarity')}" th:errors="*{clarity}"></span>
+    </p>
+
+    <p>
+        <label>Niceness Score:</label><br>
+        <small>Enter a number from 1 to 10.</small><br>
+        <input type="number" th:field="*{niceness}" min="1" max="10">
+        <br>
+        <span th:if="${#fields.hasErrors('niceness')}" th:errors="*{niceness}"></span>
+    </p>
+
+    <p>
+        <label>Knowledgeable Score:</label><br>
+        <small>Enter a number from 1 to 10.</small><br>
+        <input type="number" th:field="*{knowledgeableScore}" min="1" max="10">
+        <br>
+        <span th:if="${#fields.hasErrors('knowledgeableScore')}" th:errors="*{knowledgeableScore}"></span>
+    </p>
+
+    <p>
+        <label>Comment:</label><br>
+        <textarea th:field="*{comment}" rows="4" cols="40"></textarea>
+        <br>
+        <span th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}"></span>
+    </p>
+
+    <p>
+        <button type="submit">Save</button>
+    </p>
+
+</form>
+
+<p>
+    <a th:href="@{/ratings}">Back to List</a>
+</p>
+
+</body>
+</html>
+```

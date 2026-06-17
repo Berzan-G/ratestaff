@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rating Details</title>
+</head>
+<body>
+
+<h1>Rating Details</h1>
+
+<p>
+    <strong>Name:</strong>
+    <span th:text="${rating.name}">Name</span>
+</p>
+
+<p>
+    <strong>Email:</strong>
+    <span th:text="${rating.email}">Email</span>
+</p>
+
+<p>
+    <strong>Role Type:</strong>
+    <span th:text="${rating.roleType}">Role</span>
+</p>
+
+<p>
+    <strong>Display Title:</strong>
+    <span th:text="${displayTitle}">Display Title</span>
+</p>
+
+<p>
+    <strong>Clarity:</strong>
+    <span th:text="${rating.clarity}">0</span>
+</p>
+
+<p>
+    <strong>Niceness:</strong>
+    <span th:text="${rating.niceness}">0</span>
+</p>
+
+<p>
+    <strong>Knowledgeable Score:</strong>
+    <span th:text="${rating.knowledgeableScore}">0</span>
+</p>
+
+<p>
+    <strong>Overall Score:</strong>
+    <span th:text="${rating.overallScore}">0.0</span>
+</p>
+
+<p>
+    <strong>Comment:</strong>
+    <span th:text="${rating.comment}">Comment</span>
+</p>
+
+<p>
+    <strong>Created At:</strong>
+    <span th:text="${rating.createdAt}">Created</span>
+</p>
+
+<p>
+    <strong>Updated At:</strong>
+    <span th:text="${rating.updatedAt}">Updated</span>
+</p>
+
+<p>
+    <a th:href="@{/ratings/{id}/edit(id=${rating.id})}">Edit</a>
+</p>
+
+<p>
+    <a th:href="@{/ratings/{id}/delete(id=${rating.id})}">Delete</a>
+</p>
+
+<p>
+    <a th:href="@{/ratings}">Back to List</a>
+</p>
+
+</body>
+</html>

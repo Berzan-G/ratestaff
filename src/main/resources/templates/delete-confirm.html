@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete Rating</title>
+</head>
+<body>
+
+<h1>Delete Rating</h1>
+
+<p>Are you sure you want to delete this rating?</p>
+
+<p>
+    <strong>Name:</strong>
+    <span th:text="${rating.name}">Name</span>
+</p>
+
+<p>
+    <strong>Email:</strong>
+    <span th:text="${rating.email}">Email</span>
+</p>
+
+<form th:action="@{/ratings/{id}/delete(id=${rating.id})}" method="post">
+    <button type="submit">Confirm Delete</button>
+</form>
+
+<p>
+    <a th:href="@{/ratings/{id}(id=${rating.id})}">Cancel</a>
+</p>
+
+</body>
+</html>
