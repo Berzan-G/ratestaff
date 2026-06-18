@@ -22,5 +22,4 @@ AI DECLARATION:
 I had no idea how to do the testing part of the assignment, so ChatGPT helped out a great deal with that.
 I had trouble figuring out exactly how StaffRatingController.java worked, so I asked ChatGPT to give me the structure of the file and explain how the file worked (what each major section did), plus explaining Java syntax.
 I had some errors/bugs in StaffRating.java that mainly consisted of spelling mistakes and incorrect formatting that I fixed using ChatGPT.
-I used ChatGPT to figure out how to properly write form.html and create the drop-down menus, among other things.
-Had a whole series of issues with deploying to Render that I had ChatGPT successfully fix.
+I used ChatGPT to figure out how to properly write form.html so that the drop-down menus and error messages worked properly
